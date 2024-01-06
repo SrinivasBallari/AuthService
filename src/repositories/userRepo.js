@@ -14,13 +14,36 @@ class UserRepo {
 
     async destroy(userId){
         try {
-            console.log(userId);
             await User.destroy({
                 where: {
                     id: userId
                 }
             });
             return true;
+        } catch (error) {
+            console.log("Error in User repo",error);
+            throw(error);
+        }
+    }
+
+    async getUser(userId){
+        try {
+            const user = await User.findByPk(userId);
+            return user;
+        } catch (error) {
+            console.log("Error in User repo",error);
+            throw(error);
+        }
+    }
+
+    async getUserByEmail(email){
+        try {
+            const user = await User.findOne({
+                where:{
+                    email : email
+                }
+            });
+            return user;
         } catch (error) {
             console.log("Error in User repo",error);
             throw(error);
