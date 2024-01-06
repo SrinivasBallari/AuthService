@@ -51,6 +51,20 @@ class UserService {
         }
     }
 
+    async isAuthenticated(token){
+        try {
+            const response = this.#verifyToken(token);
+            if(!response){
+                throw {error : "Invalid Token"}
+            }
+            const user = this.userRepo.getUser(response.id);
+            return user.id;
+        } catch (error) {
+            console.log("Error occured in user service layer ");
+            throw({error});
+        }
+    }
+
     #createToken(user){
         try {
             const createdToken = jwt.sign(user, JWT_KEY, {expiresIn: '3d'});

@@ -14,6 +14,10 @@ router.post(
     AuthRequestValidator.validateUserAuthentication,
     UserController.signIn
 );
+router.get(
+    '/isAuthenticated',
+    UserController.isAuthenticated
+);
 router.delete('/user',UserController.destroy);
 
 module.exports = router;
