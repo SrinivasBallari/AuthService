@@ -18,6 +18,13 @@ router.get(
     '/isAuthenticated',
     UserController.isAuthenticated
 );
+
+router.get(
+    '/isAdmin',
+    AuthRequestValidator.validateIsAdminRequest,
+    UserController.isAdmin,
+);
+
 router.delete('/user',UserController.destroy);
 
 module.exports = router;

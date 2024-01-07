@@ -65,6 +65,15 @@ class UserService {
         }
     }
 
+    async isAdmin(userId){
+        try {
+            return await this.userRepo.isAdmin(userId);
+        } catch (error) {
+            console.log("Error occured in user service layer ");
+            throw({error});
+        }
+    }
+
     #createToken(user){
         try {
             const createdToken = jwt.sign(user, JWT_KEY, {expiresIn: '3d'});
