@@ -57,7 +57,7 @@ class UserService {
             if(!response){
                 throw {error : "Invalid Token"}
             }
-            const user = this.userRepo.getUser(response.id);
+            const user = await this.userRepo.getUser(response.id);
             return user.id;
         } catch (error) {
             console.log("Error occured in user service layer ");
