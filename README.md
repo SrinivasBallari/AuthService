@@ -8,3 +8,5 @@ This Authentication Micro-service is a part of Airline-Booking System Project [ 
   - [Reminder-Service](https://github.com/SrinivasBallari/ReminderService)
   - [Api-Gateway](https://github.com/SrinivasBallari/ApiGateway)
   - [Flights-Search-Service](https://github.com/SrinivasBallari/FlightsAndSearchService)
+
+![image](https://github.com/SrinivasBallari/AuthService/assets/98298853/f38dbf39-775b-4f45-a81a-d07538969eb2)
